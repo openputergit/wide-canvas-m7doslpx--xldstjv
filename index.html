@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Business Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="bi bi-boxes text-3xl text-sky-500"></i>
+                    <span class="ml-2 text-xl font-semibold text-gray-800">TechFlow</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="showPage('home')" class="text-gray-600 hover:text-sky-500 transition">Home</button>
+                    <button onclick="showPage('services')" class="text-gray-600 hover:text-sky-500 transition">Services</button>
+                    <button onclick="showPage('about')" class="text-gray-600 hover:text-sky-500 transition">About Us</button>
+                    <button onclick="showPage('contact')" class="text-gray-600 hover:text-sky-500 transition">Contact</button>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="text-gray-600">
+                        <i class="bi bi-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <button onclick="showPage('home')" class="block w-full text-left px-3 py-2 text-gray-600 hover:bg-sky-50">Home</button>
+                <button onclick="showPage('services')" class="block w-full text-left px-3 py-2 text-gray-600 hover:bg-sky-50">Services</button>
+                <button onclick="showPage('about')" class="block w-full text-left px-3 py-2 text-gray-600 hover:bg-sky-50">About Us</button>
+                <button onclick="showPage('contact')" class="block w-full text-left px-3 py-2 text-gray-600 hover:bg-sky-50">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active pt-20">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="animate-float">
+                    <svg class="w-full h-auto" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#0EA5E9" d="M45.7,-77.9C58.9,-69.5,69.3,-55.3,76.3,-39.7C83.3,-24.1,86.9,-7.1,84.6,9C82.3,25.1,74.1,40.3,63.1,52.7C52.1,65.1,38.4,74.7,22.7,79.6C7,84.5,-10.7,84.7,-27.4,79.9C-44.1,75.1,-59.8,65.3,-71.7,51.4C-83.6,37.5,-91.7,19.3,-89.9,2.1C-88.1,-15.1,-76.3,-31.2,-63.6,-44.1C-50.9,-57,-37.2,-66.8,-22.9,-74.3C-8.6,-81.8,6.4,-87,22.8,-85.3C39.2,-83.6,32.5,-86.3,45.7,-77.9Z" transform="translate(100 100)" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-4xl font-bold text-gray-800 mb-6">Transform Your Business with Digital Innovation</h1>
+                    <p class="text-gray-600 mb-8">We help businesses grow through cutting-edge technology solutions and digital transformation strategies.</p>
+                    <button onclick="showPage('contact')" class="bg-sky-500 text-white px-8 py-3 rounded-lg hover:bg-sky-600 transition">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page pt-20">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <i class="bi bi-laptop text-4xl text-sky-500"></i>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Web Development</h3>
+                    <p class="text-gray-600">Custom websites and web applications built with the latest technologies.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <i class="bi bi-phone text-4xl text-sky-500"></i>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Mobile Apps</h3>
+                    <p class="text-gray-600">Native and cross-platform mobile applications for iOS and Android.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <i class="bi bi-graph-up text-4xl text-sky-500"></i>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Digital Marketing</h3>
+                    <p class="text-gray-600">Strategic marketing solutions to grow your online presence.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page pt-20">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">About Us</h2>
+                    <p class="text-gray-600 mb-4">We are a team of passionate technologists dedicated to helping businesses succeed in the digital age.</p>
+                    <p class="text-gray-600 mb-4">With over 10 years of experience, we've helped hundreds of companies achieve their digital transformation goals.</p>
+                </div>
+                <div class="animate-float">
+                    <svg class="w-full h-auto" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#0EA5E9" d="M38.5,-64.1C51.5,-56.7,64.8,-49.1,73.5,-37.4C82.2,-25.7,86.3,-9.9,84.8,5.2C83.3,20.4,76.1,34.9,66.2,46.7C56.3,58.5,43.7,67.6,29.7,71.9C15.7,76.2,0.4,75.7,-15.6,73C-31.6,70.4,-48.2,65.6,-61.4,55.4C-74.6,45.2,-84.3,29.7,-87.7,12.7C-91.1,-4.3,-88.2,-22.8,-79.7,-37.2C-71.2,-51.6,-57.2,-61.9,-42.8,-68.4C-28.4,-74.9,-14.2,-77.7,-0.2,-77.3C13.8,-77,27.5,-73.5,38.5,-64.1Z" transform="translate(100 100)" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page pt-20">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Contact Us</h2>
+            <div class="max-w-lg mx-auto">
+                <form onsubmit="handleSubmit(event)" class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Name</label>
+                        <input type="text" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-sky-500">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-sky-500">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Message</label>
+                        <textarea required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-sky-500" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-sky-500 text-white py-2 rounded-lg hover:bg-sky-600 transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            event.target.reset();
+        }
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
